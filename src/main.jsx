@@ -7,10 +7,18 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Navbar from './Nav/Navbar.jsx';
+import Layout from './layout/Layout.jsx';
+import Home from './home/Home.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navbar></Navbar>,
+    element: <Layout></Layout>,
+    children:[
+      {
+        path: "/",
+        element: <Home></Home>
+      }
+    ]
   },
 ]);
 createRoot(document.getElementById('root')).render(
